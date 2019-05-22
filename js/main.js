@@ -1,3 +1,4 @@
+//Google API for places 
 const searchElement = document.querySelector('[data-city-search]')
 const searchBox = new google.maps.places.SearchBox(searchElement)
 searchBox.addListener('places_changed', ()=> {

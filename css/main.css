@@ -619,6 +619,18 @@ legend {
 }
 
 /*# sourceMappingURL=Searchs_128.css.map */
+@keyframes fade {
+  0% {
+    opacity: 100%; }
+  100% {
+    opacity: 0%; } }
+
 .aqi, .station{
   text-align: center;
+  font-weight: 200;
+  font-family: sans-serif;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-bottom: 5vh;
+
 }
