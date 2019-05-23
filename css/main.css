@@ -63,8 +63,8 @@ body,html{
        height: 40vh!important;
      }
     #header{
-      height: 10vh;
+      min-height: 10vh}
+    #footer{
+      min-height: 10vh;
     }
-    #information{
-      
-    }
+   
