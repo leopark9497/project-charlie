@@ -5,6 +5,7 @@ searchBox.addListener('places_changed', ()=> {
    const place = searchBox.getPlaces()[0]
    let aqi = document.querySelector('.aqi')
    let station = document.querySelector('.station')
+  
    if (place == null) {return} else {
      const latitude = place.geometry.location.lat();
      const longtitude = place.geometry.location.lng();
@@ -14,9 +15,12 @@ searchBox.addListener('places_changed', ()=> {
        })
        .then(function(data) {
          //DOM manipulation here !!!
+         let link=`https://www.google.com/maps/embed/v1/search?key=AIzaSyDPdSf1Rvt_ezerNCumo8H-GRmgJBHdoQg&q=${data.data.city.name}`;
          console.log(data);
+         document.querySelector("iframe").setAttribute("src",link);
          aqi.textContent = data.data.aqi;
          station.textContent = data.data.city.name;
        });
+       
    }
 })
