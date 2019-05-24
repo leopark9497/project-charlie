@@ -47,3 +47,10 @@ searchBox.addListener('places_changed', ()=> {
        
    }
 })
+
+setInterval(function () {
+  $(".information").css("background-color", function () {
+      this.switch = !this.switch
+      return this.switch ? "white" : ""
+  });
+}, 700)
