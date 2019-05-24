@@ -20,6 +20,29 @@ searchBox.addListener('places_changed', ()=> {
          document.querySelector("iframe").setAttribute("src",link);
          aqi.textContent = data.data.aqi;
          station.textContent = data.data.city.name;
+         //AQI reading
+         if (aqi.textContent <= 50) {
+          document.getElementById("whatMeans").innerHTML = "Air Quality: Good";
+          document.getElementById("whatToDo").innerHTML = "Action: Enjoy the fresh air";
+          document.getElementById("information").style.backgroundColor = "#9fff80";
+          
+        
+        }  else if (aqi.textContent <= 100) {
+          document.getElementById("whatMeans").innerHTML = "Air Quality: Moderate";
+          document.getElementById("whatToDo").innerHTML = "Action: Limit prolonged outdoor exertion.";
+          document.getElementById("information").style.backgroundColor = "#ffff99";
+        
+        } else if (aqi.textContent <=300) {
+          document.getElementById("whatMeans").innerHTML = "Air Quality: Unhealthy";
+          document.getElementById("whatToDo").innerHTML = "Action: Take precautions espetially for kids";
+          document.getElementById("information").style.backgroundColor = "#ff8080";
+        
+        } else {
+          document.getElementById("whatMeans").innerHTML = "Air Quality: Hazardous";
+          document.getElementById("whatToDo").innerHTML = "Action:Stay Indoors. So bad tomorrow might get better";
+          document.getElementById("information").style.backgroundColor = "#5c5cd6";
+
+          }
        });
        
    }
